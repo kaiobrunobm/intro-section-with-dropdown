@@ -16,13 +16,10 @@ const Main = () => {
         </button>
       </div>
       <picture>
-        <source
-          srcSet="/public/image-hero-desktop.png"
-          media="(min-width: 1440px)"
-        />
+        <source srcSet="./image-hero-desktop.png" media="(min-width: 1440px)" />
         <img
           className="my-3 max-w-[375px]"
-          src="/public/image-hero-mobile.png"
+          src="./image-hero-mobile.png"
           alt="Hero"
         />
       </picture>
