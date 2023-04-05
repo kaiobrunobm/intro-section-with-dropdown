@@ -1,125 +1,67 @@
 import React from "react";
-import { VscChevronDown, VscChevronUp } from "react-icons/vsc";
+import { VscChevronDown } from "react-icons/vsc";
 import { BiAlarm, BiCalendarEvent, BiNotepad } from "react-icons/bi";
 import { FaBell } from "react-icons/fa";
-import { useState, useEffect, useRef } from "react";
 
 const Nav = () => {
-  const [menuFeatures, setMenuFeatures] = useState(false);
-  const [menuCompany, setMenuCompany] = useState(false);
-
-  const menuFeaturesRef = useRef();
-  const menuCompanyRef = useRef();
-
-  const handleMenuCompany = () => {
-    setMenuCompany(!menuCompany);
-  };
-  const handleMenuFeatures = () => {
-    setMenuFeatures(!menuFeatures);
-  };
-
-  useEffect(() => {
-    const handleBody = (event) => {
-      if (
-        !menuFeaturesRef.current.contains(event.target) &&
-        !menuCompanyRef.current.contains(event.target)
-      ) {
-        setMenuFeatures(false);
-        setMenuCompany(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleBody);
-  });
-
   return (
     <nav className="sm: hidden lg:flex lg:justify-start">
       <div className="text-[1.1rem] text-MediumGray mx-20 flex items-center gap-16">
-        <div className="flex flex-col justify-between items-center">
-          <a
-            onClick={handleMenuFeatures}
-            href="#"
-            className="flex items-center gap-3 trasition-all duration-300 hover:text-AlmostBlack"
-          >
+        <div className="group/features flex flex-col justify-between items-center">
+          <button className="flex items-center gap-3 trasition-all duration-300 hover:text-AlmostBlack">
             Freatures
-            {menuFeatures ? (
-              <VscChevronUp className="text-[1.3rem]" />
-            ) : (
-              <VscChevronDown className="text-[1.3rem]" />
-            )}
-          </a>
-          <div
-            ref={menuFeaturesRef}
-            className={
-              menuFeatures
-                ? "fixed left-[7rem] bg-AlmostWhite flex flex-col justify-cen mx-6 my-10 gap-5 p-5 rounded-xl shadow-lg"
-                : "hidden"
-            }
-          >
+            <VscChevronDown className="text-[1.3rem] transition-all duration-300 group-hover/features:-rotate-180" />
+          </button>
+          <div className="hidden left-[7rem] top-5 bg-AlmostWhite flex-col justify-cen mx-6 my-10 p-3 rounded-xl shadow-lg  group-hover/features:fixed group-hover/features:flex">
             <a
               href="#"
-              className="flex gap-3 transition-all duration-300 hover:text-AlmostBlack"
+              className="flex gap-3 transition-all duration-300 text-center p-2 rounded-lg hover:bg-LinkHover hover:text-AlmostBlack"
             >
               <BiNotepad className="text-Purple text-[1.5rem]" /> Todo List
             </a>
             <a
               href="#"
-              className="flex gap-3 transition-all duration-300 hover:text-AlmostBlack"
+              className="flex gap-3 transition-all duration-300 text-center p-2 rounded-lg hover:bg-LinkHover hover:text-AlmostBlack"
             >
               <BiCalendarEvent className="text-Blue text-[1.5rem]" />
               Calendar
             </a>
             <a
               href="#"
-              className="flex gap-3 transition-all duration-300 hover:text-AlmostBlack"
+              className="flex gap-3 transition-all duration-300 text-center p-2 rounded-lg hover:bg-LinkHover hover:text-AlmostBlack"
             >
               <FaBell className="text-Yellow text-[1.5rem]" /> Reminders
             </a>
             <a
               href="#"
-              className="flex gap-3 transition-all duration-300 hover:text-AlmostBlack"
+              className="flex gap-3 transition-all duration-300 text-center p-2 rounded-lg hover:bg-LinkHover hover:text-AlmostBlack"
             >
               <BiAlarm className="text-DarkPurple text-[1.5rem]" /> Planning
             </a>
           </div>
         </div>
 
-        <div>
-          <a
-            onClick={handleMenuCompany}
-            href="#"
-            className="flex items-center gap-3 trasition-all duration-300 hover:text-AlmostBlack"
-          >
+        <div className="group/company">
+          <button className="flex items-center gap-3 trasition-all duration-300 hover:text-AlmostBlack">
             Company
-            {menuCompany ? (
-              <VscChevronUp className="text-[1.3rem]" />
-            ) : (
-              <VscChevronDown className="text-[1.3rem]" />
-            )}
-          </a>
-          <div
-            ref={menuCompanyRef}
-            className={
-              menuCompany
-                ? "fixed left-[21.5rem] bg-AlmostWhite flex flex-col mx-7 my-5 p-5 rounded-xl gap-5 shadow-lg"
-                : "hidden"
-            }
-          >
+            <VscChevronDown className="text-[1.3rem] transition-all duration-300 group-hover/company:-rotate-180" />
+          </button>
+          <div className="hidden left-[21.5rem] top-10 bg-AlmostWhite flex-col  my-5 p-3 rounded-xl shadow-lg group-hover/company:fixed group-hover/company:flex">
             <a
               href="#"
-              className="transition-all duration-300 hover:text-AlmostBlack"
+              className="transition-all duration-300 text-center p-2 rounded-lg hover:bg-LinkHover hover:text-AlmostBlack "
             >
               History
             </a>
             <a
               href="#"
-              className="transition-all duration-300 hover:text-AlmostBlack"
+              className="transition-all duration-300 text-center p-2 rounded-lg hover:bg-LinkHover hover:text-AlmostBlack"
             >
               Our Team
             </a>
             <a
               href="#"
-              className="transition-all duration-300 hover:text-AlmostBlack"
+              className="transition-all duration-300 text-center p-2 rounded-lg hover:bg-LinkHover  hover:text-AlmostBlack"
             >
               Blog
             </a>

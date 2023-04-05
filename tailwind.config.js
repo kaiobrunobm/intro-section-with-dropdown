@@ -21,6 +21,7 @@ export default {
       Blue: "#43aed9",
       Yellow: "#efd74f",
       DarkPurple: "#824fba",
+      LinkHover: "#00000010",
     },
   },
   plugins: [],
