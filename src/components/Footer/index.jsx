@@ -5,24 +5,16 @@ const Footer = () => {
     <footer className="flex justify-center items-start gap-5 mt-2 lg:justify-start lg:mx-[17.5rem]">
       <img
         className="h-4"
-        src="/src/assets/images/client-databiz.svg"
+        src="/public/images/client-databiz.svg"
         alt="Databiz"
       />
       <img
         className="h-6"
-        src="/src/assets/images/client-audiophile.svg"
+        src="/public/images/client-audiophile.svg"
         alt="Audio phile"
       />
-      <img
-        className="h-4"
-        src="/src/assets/images/client-meet.svg"
-        alt="Meet"
-      />
-      <img
-        className="h-5"
-        src="/src/assets/images/client-maker.svg"
-        alt="Maker"
-      />
+      <img className="h-4" src="/public/images/client-meet.svg" alt="Meet" />
+      <img className="h-5" src="/public/images/client-maker.svg" alt="Maker" />
     </footer>
   );
 };

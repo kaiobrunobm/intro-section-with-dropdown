@@ -17,12 +17,12 @@ const Main = () => {
       </div>
       <picture>
         <source
-          srcSet="/src/assets/images/image-hero-desktop.png"
+          srcSet="/public/images/image-hero-desktop.png"
           media="(min-width: 1440px)"
         />
         <img
           className="my-3 max-w-[375px]"
-          src="/src/assets/images/image-hero-mobile.png"
+          src="/public/images/image-hero-mobile.png"
           alt="Hero"
         />
       </picture>
